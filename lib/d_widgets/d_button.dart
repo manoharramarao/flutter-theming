@@ -22,7 +22,7 @@ class DTextButton extends StatelessWidget {
       child: Text(_buttonText),
       // style: flatButtonStyle,
       style: ButtonStyle(
-        splashFactory: NoSplash.splashFactory,
+        // splashFactory: NoSplash.splashFactory,
         backgroundColor: MaterialStateProperty.resolveWith(
             (states) => _getBackgroundColor(states)),
         foregroundColor: MaterialStateProperty.resolveWith(
@@ -58,18 +58,18 @@ class DTextButton extends StatelessWidget {
       return Colors.black;
     }
     if (states.contains(MaterialState.pressed)) {
-      return "action" != type ? Colors.white : DColors.secondaryColor;
+      return "action" == type ? DColors.primaryColor : Colors.white;
     }
     return type == "action" ? DColors.primaryColor : Colors.white;
   }
 
   Color _getBackgroundColor(Set<MaterialState> states) {
     if (states.contains(MaterialState.pressed)) {
-      return "action" != type ? DColors.secondaryColor : Colors.black;
+      return Colors.transparent;
     } else if (states.contains(MaterialState.disabled)) {
-      return DColors.disabledColor;
+      return DColors.disabledButtonColor;
     }
-    return type == "action" ? Colors.black : DColors.primaryColor;
+    return type == "action" ? Colors.transparent : DColors.primaryColor;
   }
 
   double get _textFontSize {
