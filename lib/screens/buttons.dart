@@ -41,10 +41,33 @@ class DButtons extends StatelessWidget {
               text: "I am disabled",
               block: true,
             ),
-            const TextButton(
+            TextButton(
+              onPressed: () {},
+              child: const Text("SUBMIT"),
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.all(
+                  const Size.fromHeight(40),
+                ),
+              ),
+            ),
+            TextButton(
               onPressed: null,
-              child: Text("SUBMIT"),
-            )
+              child: const Text("SUBMIT"),
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.all(
+                  const Size.fromHeight(40),
+                ),
+              ),
+            ),
+            TextFormField(
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(3.0)),
+                ),
+                hintText: "mramarao@deloitte.com",
+                labelText: "User ID",
+              ),
+            ),
           ],
         ),
       ),

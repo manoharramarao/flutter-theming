@@ -1,5 +1,6 @@
 // ignore_for_file: unnecessary_const
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/d_theme/theme_data.dart';
 import 'package:myapp/screens/buttons.dart';
@@ -17,39 +18,35 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      top: true,
-      bottom: true,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text("My Style Guide"),
-        ),
-        body: ListView(
-          children: [
-            ListTile(
-              title: const Text(
-                "Typography",
-              ),
-              trailing: const Icon(
-                Icons.arrow_forward_ios_rounded,
-                color: Colors.white, // ! this should come from iconTheme data
-              ),
-              enabled: true,
-              onTap: () => navigateToTypography(context),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("My Style Guide"),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: const Text(
+              "Typography",
             ),
-            ListTile(
-              title: const Text(
-                "Buttons",
-              ),
-              trailing: const Icon(
-                Icons.arrow_forward_ios_rounded,
-                color: Colors.white, // ! this should come from iconTheme data
-              ),
-              enabled: true,
-              onTap: () => navigateToButtons(context),
+            trailing: const Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: Colors.white, // ! this should come from iconTheme data
             ),
-          ],
-        ),
+            enabled: true,
+            onTap: () => navigateToTypography(context),
+          ),
+          ListTile(
+            title: const Text(
+              "Buttons",
+            ),
+            trailing: const Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: Colors.white, // ! this should come from iconTheme data
+            ),
+            enabled: true,
+            onTap: () => navigateToButtons(context),
+          ),
+        ],
       ),
     );
   }
