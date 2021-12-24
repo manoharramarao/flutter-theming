@@ -2,10 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:myapp/d_theme/theme_data.dart';
+import 'package:myapp/screens/buttons.dart';
 import 'package:myapp/screens/typography.dart';
-import 'package:myapp/text_widgets/appbar.dart';
-import 'package:myapp/text_widgets/d_button.dart';
-import 'package:myapp/text_widgets/text_widgets.dart';
+import 'package:myapp/d_widgets/appbar.dart';
+import 'package:myapp/d_widgets/d_button.dart';
+import 'package:myapp/d_widgets/text_widgets.dart';
 
 void main() {
   runApp(MaterialApp(home: const HomePage(), theme: DTheme.darkTheme));
@@ -26,10 +27,26 @@ class HomePage extends StatelessWidget {
         body: ListView(
           children: [
             ListTile(
-              title: const Text("Typography"),
-              trailing: const Icon(Icons.arrow_forward_ios_rounded),
+              title: const Text(
+                "Typography",
+              ),
+              trailing: const Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: Colors.white, // ! this should come from iconTheme data
+              ),
               enabled: true,
               onTap: () => navigateToTypography(context),
+            ),
+            ListTile(
+              title: const Text(
+                "Buttons",
+              ),
+              trailing: const Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: Colors.white, // ! this should come from iconTheme data
+              ),
+              enabled: true,
+              onTap: () => navigateToButtons(context),
             ),
           ],
         ),
@@ -40,5 +57,10 @@ class HomePage extends StatelessWidget {
   navigateToTypography(context) {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const DTypography()));
+  }
+
+  navigateToButtons(context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const DButtons()));
   }
 }

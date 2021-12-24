@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/text_widgets/text_widgets.dart';
+import 'package:myapp/d_widgets/leading_icon.dart';
+import 'package:myapp/d_widgets/text_widgets.dart';
 
 class DTypography extends StatelessWidget {
   const DTypography({Key? key}) : super(key: key);
@@ -9,12 +10,7 @@ class DTypography extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Typography"),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(Icons.arrow_back_ios),
-        ),
+        leading: const DBackButton(),
       ),
       body: const TextWidgets(),
     );

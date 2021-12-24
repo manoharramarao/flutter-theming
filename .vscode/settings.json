@@ -1,4 +1,7 @@
 {
     "editor.defaultFormatter": "Dart-Code.dart-code",
-    "editor.minimap.maxColumn": 80
+    "editor.minimap.maxColumn": 80,
+    "[dart]": {
+      "editor.rulers": [80],
+    },
 }
