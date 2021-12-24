@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/d_widgets/leading_icon.dart';
-import 'package:myapp/d_widgets/text_widgets.dart';
 
-class DTypography extends StatelessWidget {
-  const DTypography({Key? key}) : super(key: key);
+class DButtons extends StatelessWidget {
+  const DButtons({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Typography"),
+        title: const Text("Buttons"),
         leading: const DBackButton(),
       ),
-      body: const TextWidgets(),
     );
   }
 }
