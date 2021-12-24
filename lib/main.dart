@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:myapp/d_theme/theme_data.dart';
+import 'package:myapp/screens/typography.dart';
 import 'package:myapp/text_widgets/appbar.dart';
 import 'package:myapp/text_widgets/d_button.dart';
 import 'package:myapp/text_widgets/text_widgets.dart';
@@ -20,22 +21,24 @@ class HomePage extends StatelessWidget {
       bottom: true,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("My Style Guide"),
+          title: const Text("My Style Guide"),
         ),
         body: ListView(
           children: [
             ListTile(
-              title: Text("Typography"),
-              trailing: Icon(Icons.arrow_forward_ios_rounded),
+              title: const Text("Typography"),
+              trailing: const Icon(Icons.arrow_forward_ios_rounded),
               enabled: true,
+              onTap: () => navigateToTypography(context),
             ),
-            DButton(
-              onPressed: () {},
-              text: "SUBMIT",
-            )
           ],
         ),
       ),
     );
+  }
+
+  navigateToTypography(context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const DTypography()));
   }
 }
