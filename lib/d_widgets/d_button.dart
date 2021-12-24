@@ -58,14 +58,14 @@ class DTextButton extends StatelessWidget {
       return Colors.black;
     }
     if (states.contains(MaterialState.pressed)) {
-      return "action" != type ? Colors.white : DColors.secondaryColor;
+      return "action" == type ? DColors.primaryColor : Colors.white;
     }
     return type == "action" ? DColors.primaryColor : Colors.white;
   }
 
   Color _getBackgroundColor(Set<MaterialState> states) {
     if (states.contains(MaterialState.pressed)) {
-      return "action" != type ? DColors.secondaryColor : Colors.transparent;
+      return Colors.transparent;
     } else if (states.contains(MaterialState.disabled)) {
       return DColors.disabledButtonColor;
     }
