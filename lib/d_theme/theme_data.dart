@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class DTheme {
-  static const _blackPrimaryValue = 0xFF000000;
+  static const _appbarBottomBorderColor = 0xff424242;
 
   static ThemeData get darkTheme {
     return ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
         buttonTheme: ThemeData.dark().buttonTheme.copyWith(
-            colorScheme: ColorScheme.dark()
+            colorScheme: const ColorScheme.dark()
                 .copyWith(background: Colors.green, primary: Colors.green)),
-        appBarTheme: ThemeData.dark()
-            .appBarTheme
-            .copyWith(centerTitle: true, backgroundColor: Colors.black));
+        appBarTheme: ThemeData.dark().appBarTheme.copyWith(
+            centerTitle: true,
+            backgroundColor: Colors.black,
+            shape: const Border(
+                bottom: BorderSide(color: Color(_appbarBottomBorderColor)))));
   }
 }
