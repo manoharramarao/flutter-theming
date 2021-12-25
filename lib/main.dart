@@ -1,13 +1,7 @@
-// ignore_for_file: unnecessary_const
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/d_theme/theme_data.dart';
 import 'package:myapp/screens/buttons.dart';
 import 'package:myapp/screens/typography.dart';
-import 'package:myapp/d_widgets/appbar.dart';
-import 'package:myapp/d_widgets/d_buttons.dart';
-import 'package:myapp/d_widgets/text_widgets.dart';
 
 void main() {
   runApp(MaterialApp(home: const HomePage(), theme: DTheme.darkTheme));
