@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/d_theme/d_widgets/d_buttons.dart';
-import 'package:myapp/d_theme/d_widgets/leading_icon.dart';
+import 'package:myapp/d_theme/d_widgets/d_icons.dart';
 
 class DButtons extends StatelessWidget {
   const DButtons({Key? key}) : super(key: key);
