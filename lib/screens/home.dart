@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/screens/buttons.dart';
+import 'package:myapp/screens/inputs.dart';
 import 'package:myapp/screens/typography.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -35,6 +36,17 @@ class HomeScreen extends StatelessWidget {
             enabled: true,
             onTap: () => navigateToButtons(context),
           ),
+          ListTile(
+            title: const Text(
+              "Inputs",
+            ),
+            trailing: const Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: Colors.white, // ! this should come from iconTheme data
+            ),
+            enabled: true,
+            onTap: () => navigateToInputs(context),
+          ),
         ],
       ),
     );
@@ -48,5 +60,10 @@ class HomeScreen extends StatelessWidget {
   navigateToButtons(context) {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const DButtons()));
+  }
+
+  navigateToInputs(context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Dinputs()));
   }
 }
