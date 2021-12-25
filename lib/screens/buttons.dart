@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/d_widgets/d_button.dart';
+import 'package:myapp/d_widgets/d_buttons.dart';
 import 'package:myapp/d_widgets/leading_icon.dart';
 
 class DButtons extends StatelessWidget {
@@ -16,50 +16,29 @@ class DButtons extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
-            DTextButton(
-              onPressed: () {},
-              text: "submit",
-              block: false,
-            ),
-            DTextButton(
-              onPressed: () {},
-              text: "block button",
-              block: true,
-            ),
-            DTextButton(
-              onPressed: () {},
-              text: "Secondary Button",
-              type: "secondary",
-            ),
-            DTextButton(
-              onPressed: () {},
-              text: "Action Button",
-              type: "action",
-            ),
-            const DTextButton(
+            const DTextBlockButton(
               onPressed: null,
               text: "I am disabled",
-              block: true,
             ),
-            TextButton(
+            const SizedBox(height: 10),
+            DTextBlockButton(
               onPressed: () {},
-              child: const Text("SUBMIT"),
-              style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all(
-                  const Size.fromHeight(40),
-                ),
-              ),
+              text: "I am block button",
             ),
-            TextButton(
-              onPressed: null,
-              child: const Text("SUBMIT"),
-              style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all(
-                  const Size.fromHeight(40),
-                ),
-              ),
+            const SizedBox(height: 10),
+            DTextButton(
+              onPressed: () {},
+              text: "I am Button",
             ),
-            TextFormField(
+            DTextSecondaryButton(
+              onPressed: () {},
+              text: "I am Secondary button",
+            ),
+            DTextActionButton(
+              onPressed: () {},
+              text: "I am Action button",
+            ),
+            /* TextFormField(
               decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(3.0)),
@@ -67,7 +46,7 @@ class DButtons extends StatelessWidget {
                 hintText: "mramarao@deloitte.com",
                 labelText: "User ID",
               ),
-            ),
+            ), */
           ],
         ),
       ),
