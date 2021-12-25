@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/d_theme/d_widgets/leading_icon.dart';
+import 'package:myapp/d_theme/d_widgets/d_icons.dart';
 import 'package:myapp/d_theme/d_widgets/text_widgets.dart';
 
 class DTypography extends StatelessWidget {
