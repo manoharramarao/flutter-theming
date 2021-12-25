@@ -6,7 +6,7 @@ import 'package:myapp/d_theme/theme_data.dart';
 import 'package:myapp/screens/buttons.dart';
 import 'package:myapp/screens/typography.dart';
 import 'package:myapp/d_widgets/appbar.dart';
-import 'package:myapp/d_widgets/d_button.dart';
+import 'package:myapp/d_widgets/d_buttons.dart';
 import 'package:myapp/d_widgets/text_widgets.dart';
 
 void main() {
