@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/d_widgets/d_colors.dart';
+import 'package:myapp/d_theme/d_widgets/d_colors.dart';
 
 class DTextButton extends StatelessWidget {
   final String text;

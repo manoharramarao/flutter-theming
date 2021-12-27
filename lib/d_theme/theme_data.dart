@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/d_widgets/d_colors.dart';
-import 'package:myapp/screens/buttons.dart';
+import 'package:myapp/d_theme/d_widgets/d_colors.dart';
 
 class DTheme {
   static ThemeData get darkTheme {
