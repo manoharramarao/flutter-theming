@@ -64,6 +64,6 @@ class HomeScreen extends StatelessWidget {
 
   navigateToInputs(context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const Dinputs()));
+        context, MaterialPageRoute(builder: (context) => const DInputs()));
   }
 }
