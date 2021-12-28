@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/d_theme/d_widgets/d_checkbox.dart';
 import 'package:myapp/d_theme/d_widgets/d_colors.dart';
+import 'package:myapp/d_theme/d_widgets/d_datetime_picker.dart';
 import 'package:myapp/d_theme/d_widgets/d_dropdown.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:dio/dio.dart';
@@ -128,6 +129,7 @@ class _DInputsState extends State<DInputs> {
                   ),
                 ],
               ),
+              const DDateTimePicker(),
             ],
           ),
         ),
