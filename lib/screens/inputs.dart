@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/d_theme/d_widgets/d_checkbox.dart';
+import 'package:myapp/d_theme/d_widgets/d_colors.dart';
 import 'package:myapp/d_theme/d_widgets/d_dropdown.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:dio/dio.dart';
@@ -64,6 +66,7 @@ class DInputs extends StatefulWidget {
 
 class _DInputsState extends State<DInputs> {
   final _formKey = GlobalKey<FormState>();
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,6 +108,14 @@ class _DInputsState extends State<DInputs> {
                 onChanged: (_) {},
               ),
               const DDropdown(),
+              DCheckbox(
+                value: isChecked,
+                onChanged: (bool? value) {
+                  setState(() {
+                    isChecked = value!;
+                  });
+                },
+              ),
             ],
           ),
         ),
