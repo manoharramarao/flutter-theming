@@ -24,11 +24,22 @@ class _DCheckboxState extends State<DCheckbox> {
     return Checkbox(
       value: value,
       onChanged: onChanged,
-      checkColor: Colors.white,
-      fillColor: MaterialStateProperty.all(DColors.primaryColor),
+      // checkColor: Colors.black,
+      // activeColor: Colors.black,
+      fillColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.disabled)) {
+          return DColors.disabledCheckboxColor;
+        }
+        return DColors.primaryColor;
+      }),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(3),
       ),
+      // side: MaterialStateBorderSide.resolveWith((states) {
+      //   if (states.contains()) {
+
+      //   }
+      // }),
     );
   }
 }

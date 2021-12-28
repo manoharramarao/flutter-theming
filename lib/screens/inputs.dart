@@ -108,13 +108,25 @@ class _DInputsState extends State<DInputs> {
                 onChanged: (_) {},
               ),
               const DDropdown(),
-              DCheckbox(
-                value: isChecked,
-                onChanged: (bool? value) {
-                  setState(() {
-                    isChecked = value!;
-                  });
-                },
+              Row(
+                children: [
+                  const DCheckbox(
+                    value: false,
+                    onChanged: null,
+                  ),
+                  const DCheckbox(
+                    value: true,
+                    onChanged: null,
+                  ),
+                  DCheckbox(
+                    value: isChecked,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        isChecked = value!;
+                      });
+                    },
+                  ),
+                ],
               ),
             ],
           ),
