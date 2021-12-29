@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:myapp/d_theme/d_widgets/d_buttons.dart';
+import 'package:myapp/d_theme/d_widgets/d_text_field.dart';
 
 class DDateTimePicker extends StatefulWidget {
   const DDateTimePicker({Key? key}) : super(key: key);
@@ -11,40 +12,48 @@ class DDateTimePicker extends StatefulWidget {
 
 class _DDateTimePickerState extends State<DDateTimePicker> {
   DateTime selectedDate = DateTime.now();
-  final DateFormat dateFormat = DateFormat('yyyy-MM-dd HH:mm');
+  final DateFormat dateFormat = DateFormat('MMM-dd, yyyy');
+  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(dateFormat.format(selectedDate)),
-        DTextBlockButton(
-          text: "Choose New Date",
-          onPressed: () async {
+        DTextField(
+          controller: _controller,
+          hintText: "Date",
+          labelText: "Select Date",
+          validator: (value) {},
+          suffixIcon: IconButton(
+            icon: const Icon(Icons.date_range),
+            onPressed: () async {
+              final selectedDate = await _selectDateTime(context);
+              if (selectedDate == null) return;
+              setState(() {
+                this.selectedDate = DateTime(
+                    selectedDate.year, selectedDate.month, selectedDate.day);
+                _controller.value = TextEditingValue(
+                  text: dateFormat.format(selectedDate),
+                );
+              });
+            },
+          ),
+          onTap: () async {
             final selectedDate = await _selectDateTime(context);
             if (selectedDate == null) return;
-            /* final selectedTime = await _selectTime(context);
-            if (selectedTime == null) return;
-            print(selectedTime); */
             setState(() {
               this.selectedDate = DateTime(
                   selectedDate.year, selectedDate.month, selectedDate.day);
+              _controller.value = TextEditingValue(
+                text: dateFormat.format(selectedDate),
+              );
             });
           },
         ),
       ],
     );
   }
-
-  /* Future<TimeOfDay?> _selectTime(BuildContext context) {
-    final now = DateTime.now();
-
-    return showTimePicker(
-      context: context,
-      initialTime: TimeOfDay(hour: now.hour, minute: now.minute),
-    );
-  } */
 
   Future<DateTime?> _selectDateTime(BuildContext context) => showDatePicker(
         context: context,

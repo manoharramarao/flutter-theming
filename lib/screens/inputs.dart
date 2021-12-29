@@ -5,6 +5,8 @@ import 'package:myapp/d_theme/d_widgets/d_datetime_picker.dart';
 import 'package:myapp/d_theme/d_widgets/d_dropdown.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:dio/dio.dart';
+import 'package:myapp/d_theme/d_widgets/d_text_dropdown.dart';
+import 'package:myapp/d_theme/d_widgets/d_text_field.dart';
 
 /* class Dinputs extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -81,17 +83,9 @@ class _DInputsState extends State<DInputs> {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              TextFormField(
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(3.0),
-                    ),
-                  ),
-                  hintText: "example@deloitte.com",
-                  labelText: "User ID",
-                ),
+              DTextField(
+                hintText: "example@deloitte.com",
+                labelText: "User ID",
                 validator: (text) {
                   if (text == null || text.isEmpty) {
                     return 'Text is empty';
@@ -99,16 +93,23 @@ class _DInputsState extends State<DInputs> {
                   return null;
                 },
               ),
-              DropdownButton<String>(
-                items: <String>['A', 'B', 'C', 'D'].map((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                onChanged: (_) {},
+              const SizedBox(
+                width: 10,
+                height: 10,
               ),
-              const DDropdown(),
+              DTextDropdown(
+                items: const [
+                  "Brazil",
+                  "Italia (Disabled)",
+                  "Tunisia",
+                  'Canada'
+                ],
+                onChanged: (value) {
+                  print("Selected value is " + value!);
+                },
+                showSearchBox: true,
+                labelText: "Select a country",
+              ),
               Row(
                 children: [
                   const DCheckbox(
