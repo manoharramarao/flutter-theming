@@ -9,7 +9,9 @@ class DTypography extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Typography"),
-        leading: const DBackButton(),
+        /* leading: const DIcon(
+          icon: Icons.arrow_back_ios,
+        ), */
       ),
       body: Container(
         padding: const EdgeInsets.all(10),
