@@ -5,6 +5,7 @@ import 'package:myapp/d_theme/d_widgets/d_datetime_picker.dart';
 import 'package:myapp/d_theme/d_widgets/d_dropdown.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:dio/dio.dart';
+import 'package:myapp/d_theme/d_widgets/d_search.dart';
 import 'package:myapp/d_theme/d_widgets/d_text_dropdown.dart';
 import 'package:myapp/d_theme/d_widgets/d_text_field.dart';
 
@@ -131,6 +132,13 @@ class _DInputsState extends State<DInputs> {
                 ],
               ),
               const DDateTimePicker(),
+              const SizedBox(
+                height: 10,
+              ),
+              const DSearchBox(
+                hintText: "Axis",
+                labelText: "Search projects",
+              ),
             ],
           ),
         ),

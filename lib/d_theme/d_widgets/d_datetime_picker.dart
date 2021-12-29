@@ -12,7 +12,7 @@ class DDateTimePicker extends StatefulWidget {
 
 class _DDateTimePickerState extends State<DDateTimePicker> {
   DateTime selectedDate = DateTime.now();
-  final DateFormat dateFormat = DateFormat('MMM-dd, yyyy');
+  final DateFormat dateFormat = DateFormat('MMM dd, yyyy');
   final TextEditingController _controller = TextEditingController();
 
   @override
@@ -22,7 +22,7 @@ class _DDateTimePickerState extends State<DDateTimePicker> {
       children: <Widget>[
         DTextField(
           controller: _controller,
-          hintText: "Date",
+          hintText: "Feb 2, 2022",
           labelText: "Select Date",
           validator: (value) {},
           suffixIcon: IconButton(

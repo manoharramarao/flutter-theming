@@ -8,6 +8,7 @@ class DTextField extends StatefulWidget {
   final String hintText;
   final String labelText;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final GestureTapCallback? onTap;
   final TextEditingController? controller;
 
@@ -17,6 +18,7 @@ class DTextField extends StatefulWidget {
     required this.hintText,
     required this.labelText,
     this.suffixIcon,
+    this.prefixIcon,
     this.onTap,
     this.controller,
   }) : super(
@@ -32,6 +34,7 @@ class _DTextFieldState extends State<DTextField> {
   String get hintText => widget.hintText;
   String get labelText => widget.labelText;
   Widget? get suffixIcon => widget.suffixIcon;
+  Widget? get prefixIcon => widget.prefixIcon;
   GestureTapCallback? get onTap => widget.onTap;
   TextEditingController? get controller => widget.controller;
 
@@ -54,6 +57,7 @@ class _DTextFieldState extends State<DTextField> {
         hintText: hintText,
         labelText: labelText,
         suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
       ),
       validator: validator,
     );
