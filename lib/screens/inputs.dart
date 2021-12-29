@@ -83,28 +83,6 @@ class _DInputsState extends State<DInputs> {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              /* TextFormField(
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                style: const TextStyle(
-                  height: 1.55,
-                ),
-                decoration: const InputDecoration(
-                  isDense: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(3.0),
-                    ),
-                  ),
-                  hintText: "example@deloitte.com",
-                  labelText: "User ID",
-                ),
-                validator: (text) {
-                  if (text == null || text.isEmpty) {
-                    return 'Text is empty';
-                  }
-                  return null;
-                },
-              ), */
               DTextField(
                 hintText: "example@deloitte.com",
                 labelText: "User ID",
@@ -115,16 +93,6 @@ class _DInputsState extends State<DInputs> {
                   return null;
                 },
               ),
-              DropdownButton<String>(
-                items: <String>['A', 'B', 'C', 'D'].map((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                onChanged: (_) {},
-              ),
-              const DDropdown(),
               const SizedBox(
                 width: 10,
                 height: 10,
