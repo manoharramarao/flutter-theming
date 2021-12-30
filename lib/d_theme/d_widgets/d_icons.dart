@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/d_theme/d_widgets/d_colors.dart';
 
-class DBackButton extends StatelessWidget {
-  const DBackButton({Key? key}) : super(key: key);
+class DIcon extends StatelessWidget {
+  final IconData icon;
+  final VoidCallback? onPressed;
+
+  const DIcon({
+    Key? key,
+    required this.icon,
+    this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {
-        Navigator.pop(context);
-      },
-      icon: const Icon(Icons.arrow_back_ios),
+      color: DColors.primaryColor,
+      disabledColor: DColors.disabledCheckboxColor,
+      onPressed: onPressed,
+      icon: Icon(
+        icon,
+        size: 30.0, // TODO move it to constants
+      ),
     );
   }
 }

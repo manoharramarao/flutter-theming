@@ -10,7 +10,9 @@ class DButtons extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Buttons"),
-        leading: const DBackButton(),
+        /* leading: const DIcon(
+          icon: Icons.arrow_back_ios,
+        ), */
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
